@@ -1,0 +1,13 @@
+1、项目地图
+
+ab_weixin_cms：微信公众号管理系统
+ab_mobile_cms：触屏版内容管理系统
+ab_pc_cms：PC端内容管理系统
+ab_mobile：触屏版系统
+ab_api：接口提供方
+ab_doc：文档管理
+
+
+2、开发流程
+
+原型-》任务-》开发提交-》验收
