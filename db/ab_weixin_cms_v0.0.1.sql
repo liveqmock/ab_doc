@@ -1,21 +1,10 @@
-/*
-Navicat MySQL Data Transfer
-
-Source Server         : 192.168.1.110_3306
-Source Server Version : 50616
-Source Host           : 127.0.0.1:3306
-Source Database       : jeewx
-
-Target Server Type    : MYSQL
-Target Server Version : 50616
-File Encoding         : 65001
-
-Date: 2014-08-13 16:30:44
-*/
-
 -- ---------------------------------
 -- TAG MYSQL DB 0.0.1
+-- 初始版本，由baoyinli 于 2014年9月21号 创建
+-- 原因：初始化数据库
 -- ---------------------------------
+/*!40101 SET NAMES utf8 */;
+/*!40101 SET SQL_MODE=''*/;
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
@@ -3857,11 +3846,3 @@ CREATE TABLE `weixin_vip_member` (
 -- Records of weixin_vip_member
 -- ----------------------------
 INSERT INTO `weixin_vip_member` VALUES ('402881e5479afd0101479b7cc102002c', 'admin', '0000000.00', '0', '2014-08-04', '402881e5479afd0101479b7cc102002b', '4028d881436d514601436d5215ac0043');
-
--- ---------------------------------
--- TAG MYSQL DB 0.0.2
--- ---------------------------------
-
--- ---------------------------------
--- 例如添加订单表，By 章广超  At 2013-02.22
--- ---------------------------------

@@ -1,19 +1,16 @@
-/*
-SQLyog Enterprise - MySQL GUI v7.15 
-MySQL - 5.1.51-community : Database - jeecms
-*********************************************************************
-*/
-
+-- ---------------------------------
+-- TAG MYSQL DB 0.0.1
+-- 初始版本，由baoyinli 于 2014年9月21号 创建
+-- 原因：初始化数据库
+-- ---------------------------------
 /*!40101 SET NAMES utf8 */;
-
 /*!40101 SET SQL_MODE=''*/;
-
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-CREATE DATABASE /*!32312 IF NOT EXISTS*/`jeecms` /*!40100 DEFAULT CHARACTER SET utf8 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`ab_pc_cms` /*!40100 DEFAULT CHARACTER SET utf8 */;
 
-USE `jeecms`;
+USE `ab_pc_cms`;
 
 /*Table structure for table `jc_acquisition` */
 
