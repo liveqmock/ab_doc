@@ -1,0 +1,142 @@
+<div style="background: #ffffff; overflow:auto;width:auto;color:black;background:white;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #999999; font-weight: bold">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span style="color: #999999; font-weight: bold">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.1//EN&quot; &quot;http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd&quot;&gt;</span>
+<span style="color: #000080">&lt;html</span> <span style="color: #008080">xmlns=</span><span style="color: #bb8844">&quot;http://www.w3.org/1999/xhtml&quot;</span> <span style="color: #008080">xml:lang=</span><span style="color: #bb8844">&quot;en&quot;</span><span style="color: #000080">&gt;</span>
+<span style="color: #000080">&lt;head&gt;</span>
+  <span style="color: #000080">&lt;title&gt;</span>Customers<span style="color: #000080">&lt;/title&gt;</span>
+  <span style="color: #000080">&lt;script </span><span style="color: #008080">type=</span><span style="color: #bb8844">&quot;text/javascript&quot;</span> <span style="color: #008080">src=</span><span style="color: #bb8844">&quot;jquery.js&quot;</span><span style="color: #000080">&gt;&lt;/script&gt;</span>
+  <span style="color: #000080">&lt;script </span><span style="color: #008080">type=</span><span style="color: #bb8844">&quot;text/javascript&quot;</span> <span style="color: #008080">src=</span><span style="color: #bb8844">&quot;jquery-jtemplates.js&quot;</span><span style="color: #000080">&gt;&lt;/script&gt;</span>
+  <span style="color: #000080">&lt;link</span> <span style="color: #008080">rel=</span><span style="color: #bb8844">&quot;stylesheet&quot;</span> <span style="color: #008080">href=</span><span style="color: #bb8844">&quot;style.css&quot;</span><span style="color: #000080">&gt;</span>
+
+  <span style="color: #000080">&lt;script </span><span style="color: #008080">type=</span><span style="color: #bb8844">&quot;text/javascript&quot;</span><span style="color: #000080">&gt;</span>
+    $(<span style="color: #999999">document</span>).ready(<span style="font-weight: bold">function</span>() {
+      <span style="color: #999988; font-style: italic">//set template</span>
+      $(<span style="color: #bb8844">&quot;#CustomersList&quot;</span>).setTemplateElement(<span style="color: #bb8844">&quot;Template-List&quot;</span>);
+      <span style="color: #999988; font-style: italic">//add parameter using to calculate &quot;age&quot;</span>
+      $(<span style="color: #bb8844">&quot;#CustomersList&quot;</span>).setParam(<span style="color: #bb8844">&quot;year&quot;</span>, <span style="color: #009999">2012</span>);
+      <span style="color: #999988; font-style: italic">//process template</span>
+      $(<span style="color: #bb8844">&quot;#CustomersList&quot;</span>).processTemplateURL(<span style="color: #bb8844">&quot;data.json&quot;</span>);
+      
+      <span style="color: #999988; font-style: italic">//set template for detailed info</span>
+      $(<span style="color: #bb8844">&quot;#CustomerDetails&quot;</span>).setTemplateElement(<span style="color: #bb8844">&quot;Template-Details&quot;</span>);
+    });
+    
+    <span style="color: #999988; font-style: italic">//show customer detail, run from template</span>
+    <span style="font-weight: bold">function</span> ShowDetails(cust) {
+      <span style="color: #999988; font-style: italic">//process a template</span>
+      $(<span style="color: #bb8844">&quot;#CustomerDetails&quot;</span>).processTemplate(cust);
+    }
+  <span style="color: #000080">&lt;/script&gt;</span>
+<span style="color: #000080">&lt;/head&gt;</span>
+
+<span style="color: #000080">&lt;body&gt;</span>
+
+  <span style="color: #999988; font-style: italic">&lt;!-- Templates --&gt;</span>
+  <span style="color: #000080">&lt;p</span> <span style="color: #008080">style=</span><span style="color: #bb8844">&quot;display:none&quot;</span><span style="color: #000080">&gt;&lt;textarea</span> <span style="color: #008080">id=</span><span style="color: #bb8844">&quot;Template-List&quot;</span> <span style="color: #008080">rows=</span><span style="color: #bb8844">&quot;0&quot;</span> <span style="color: #008080">cols=</span><span style="color: #bb8844">&quot;0&quot;</span><span style="color: #000080">&gt;</span><span style="color: #999988; font-style: italic">&lt;!--</span>
+<span style="color: #999988; font-style: italic">    {#template MAIN}</span>
+<span style="color: #999988; font-style: italic">      &lt;table&gt;</span>
+<span style="color: #999988; font-style: italic">        &lt;tr class=&quot;{#cycle values=[&#39;bcEEC&#39;,&#39;bcCEE&#39;]}&quot;&gt;</span>
+<span style="color: #999988; font-style: italic">          &lt;td class=&quot;header&quot;&gt;Details&lt;/td&gt;</span>
+<span style="color: #999988; font-style: italic">          &lt;td class=&quot;header&quot;&gt;Name&lt;/td&gt;</span>
+<span style="color: #999988; font-style: italic">          &lt;td class=&quot;header&quot;&gt;Age&lt;/td&gt;</span>
+<span style="color: #999988; font-style: italic">        &lt;/tr&gt;</span>
+<span style="color: #999988; font-style: italic">        {#foreach $T.Customers as Cust}</span>
+<span style="color: #999988; font-style: italic">          {#include ROW root=$T.Cust}</span>
+<span style="color: #999988; font-style: italic">        {#/for}</span>
+<span style="color: #999988; font-style: italic">      &lt;/table&gt;</span>
+<span style="color: #999988; font-style: italic">    {#/template MAIN}</span>
+<span style="color: #999988; font-style: italic">    </span>
+<span style="color: #999988; font-style: italic">    {#template ROW}</span>
+<span style="color: #999988; font-style: italic">      &lt;tr class=&quot;{#cycle values=[&#39;bcEED&#39;,&#39;bcDEE&#39;]}&quot;&gt;</span>
+<span style="color: #999988; font-style: italic">        &lt;td&gt;&lt;a href=&quot;#&quot; onclick=&quot;ShowDetails({#var $T})&quot;&gt;SELECT&lt;/a&gt;&lt;/td&gt;</span>
+<span style="color: #999988; font-style: italic">        &lt;td&gt;{$T.FirstName} {$T.LastName}&lt;/td&gt;</span>
+<span style="color: #999988; font-style: italic">        &lt;td&gt;{$P.year-$T.Born}&lt;/td&gt;</span>
+<span style="color: #999988; font-style: italic">      &lt;/tr&gt;</span>
+<span style="color: #999988; font-style: italic">    {#/template ROW}</span>
+<span style="color: #999988; font-style: italic">  --&gt;</span><span style="color: #000080">&lt;/textarea&gt;&lt;/p&gt;</span>
+  
+  <span style="color: #000080">&lt;p</span> <span style="color: #008080">style=</span><span style="color: #bb8844">&quot;display:none&quot;</span><span style="color: #000080">&gt;&lt;textarea</span> <span style="color: #008080">id=</span><span style="color: #bb8844">&quot;Template-Details&quot;</span> <span style="color: #008080">rows=</span><span style="color: #bb8844">&quot;0&quot;</span> <span style="color: #008080">cols=</span><span style="color: #bb8844">&quot;0&quot;</span><span style="color: #000080">&gt;</span><span style="color: #999988; font-style: italic">&lt;!--</span>
+<span style="color: #999988; font-style: italic">    &lt;table&gt;</span>
+<span style="color: #999988; font-style: italic">      &lt;tr&gt;&lt;td class=&quot;header&quot;&gt;First Name&lt;/td&gt;&lt;td&gt;{$T.FirstName}&lt;/td&gt;&lt;/tr&gt;</span>
+<span style="color: #999988; font-style: italic">      &lt;tr&gt;&lt;td class=&quot;header&quot;&gt;Last Name&lt;/td&gt;&lt;td&gt;{$T.LastName}&lt;/td&gt;&lt;/tr&gt;</span>
+<span style="color: #999988; font-style: italic">      &lt;tr&gt;&lt;td class=&quot;header&quot;&gt;Born&lt;/td&gt;&lt;td&gt;{$T.Born}&lt;/td&gt;&lt;/tr&gt;</span>
+<span style="color: #999988; font-style: italic">      &lt;tr&gt;&lt;td class=&quot;header&quot;&gt;E-mail&lt;/td&gt;&lt;td&gt;{$T.Email.link(&#39;mailto:&#39;+$T.Email)}&lt;/td&gt;&lt;/tr&gt;</span>
+<span style="color: #999988; font-style: italic">    &lt;/table&gt;</span>
+<span style="color: #999988; font-style: italic">  --&gt;</span><span style="color: #000080">&lt;/textarea&gt;&lt;/p&gt;</span>
+
+  <span style="color: #999988; font-style: italic">&lt;!-- Output elements --&gt;</span>
+  <span style="color: #000080">&lt;div</span> <span style="color: #008080">id=</span><span style="color: #bb8844">&quot;CustomersList&quot;</span> <span style="color: #008080">class=</span><span style="color: #bb8844">&quot;Content&quot;</span><span style="color: #000080">&gt;&lt;/div&gt;</span>
+  <span style="color: #000080">&lt;div</span> <span style="color: #008080">id=</span><span style="color: #bb8844">&quot;CustomerDetails&quot;</span> <span style="color: #008080">class=</span><span style="color: #bb8844">&quot;Content&quot;</span><span style="color: #000080">&gt;&lt;/div&gt;</span>
+  
+<span style="color: #000080">&lt;/body&gt;</span>
+<span style="color: #000080">&lt;/html&gt;</span>
+</pre></td></tr></table></div>

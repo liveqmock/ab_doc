@@ -1,0 +1,106 @@
+<div style="background: #ffffff; overflow:auto;width:auto;color:black;background:white;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #999999; font-weight: bold">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span style="color: #999999; font-weight: bold">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.1//EN&quot; &quot;http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd&quot;&gt;</span>
+<span style="color: #000080">&lt;html</span> <span style="color: #008080">xmlns=</span><span style="color: #bb8844">&quot;http://www.w3.org/1999/xhtml&quot;</span> <span style="color: #008080">xml:lang=</span><span style="color: #bb8844">&quot;en&quot;</span><span style="color: #000080">&gt;</span>
+<span style="color: #000080">&lt;head&gt;</span>
+  <span style="color: #000080">&lt;title&gt;</span>Items<span style="color: #000080">&lt;/title&gt;</span>
+  <span style="color: #000080">&lt;script </span><span style="color: #008080">type=</span><span style="color: #bb8844">&quot;text/javascript&quot;</span> <span style="color: #008080">src=</span><span style="color: #bb8844">&quot;jquery.js&quot;</span><span style="color: #000080">&gt;&lt;/script&gt;</span>
+  <span style="color: #000080">&lt;script </span><span style="color: #008080">type=</span><span style="color: #bb8844">&quot;text/javascript&quot;</span> <span style="color: #008080">src=</span><span style="color: #bb8844">&quot;jquery-jtemplates.js&quot;</span><span style="color: #000080">&gt;&lt;/script&gt;</span>
+  <span style="color: #000080">&lt;link</span> <span style="color: #008080">rel=</span><span style="color: #bb8844">&quot;stylesheet&quot;</span> <span style="color: #008080">href=</span><span style="color: #bb8844">&quot;style.css&quot;</span><span style="color: #000080">&gt;</span>
+
+  <span style="color: #000080">&lt;script </span><span style="color: #008080">type=</span><span style="color: #bb8844">&quot;text/javascript&quot;</span><span style="color: #000080">&gt;</span>
+    $(<span style="color: #999999">document</span>).ready(<span style="font-weight: bold">function</span>() {
+      $.getJSON(<span style="color: #bb8844">&#39;data.json&#39;</span>, <span style="font-weight: bold">function</span>(data) {
+        <span style="font-weight: bold">var</span> Items <span style="font-weight: bold">=</span> data.Items;
+        <span style="font-weight: bold">var</span> Bom <span style="font-weight: bold">=</span> Items[<span style="color: #009999">0</span>].BOM; <span style="color: #999988; font-style: italic">//sample data</span>
+        
+        $(<span style="color: #bb8844">&quot;#ItemBOM&quot;</span>).setTemplateElement(<span style="color: #bb8844">&quot;Template-BOM&quot;</span>);
+        $(<span style="color: #bb8844">&quot;#ItemBOM&quot;</span>).processTemplate(Bom);
+      });
+    });
+  <span style="color: #000080">&lt;/script&gt;</span>
+<span style="color: #000080">&lt;/head&gt;</span>
+
+<span style="color: #000080">&lt;body&gt;</span>
+  <span style="color: #999988; font-style: italic">&lt;!-- Templates --&gt;</span>
+  <span style="color: #000080">&lt;p</span> <span style="color: #008080">style=</span><span style="color: #bb8844">&quot;display:none&quot;</span><span style="color: #000080">&gt;&lt;textarea</span> <span style="color: #008080">id=</span><span style="color: #bb8844">&quot;Template-BOM&quot;</span> <span style="color: #008080">rows=</span><span style="color: #bb8844">&quot;0&quot;</span> <span style="color: #008080">cols=</span><span style="color: #bb8844">&quot;0&quot;</span><span style="color: #000080">&gt;</span><span style="color: #999988; font-style: italic">&lt;!--</span>
+<span style="color: #999988; font-style: italic">{*</span>
+<span style="color: #999988; font-style: italic">Main template</span>
+<span style="color: #999988; font-style: italic">*}</span>
+<span style="color: #999988; font-style: italic">{#template MAIN}</span>
+<span style="color: #999988; font-style: italic">  &lt;b&gt;BOM: {$T.Name}&lt;/b&gt;</span>
+<span style="color: #999988; font-style: italic">  &lt;div&gt;</span>
+<span style="color: #999988; font-style: italic">  {#include entry root=$T.Elements}</span>
+<span style="color: #999988; font-style: italic">  &lt;/div&gt;</span>
+<span style="color: #999988; font-style: italic">{#/template MAIN}</span>
+
+<span style="color: #999988; font-style: italic">{*</span>
+<span style="color: #999988; font-style: italic">Recursed subtemplate</span>
+<span style="color: #999988; font-style: italic">*}</span>
+<span style="color: #999988; font-style: italic">{#template entry}</span>
+<span style="color: #999988; font-style: italic">  &lt;ul&gt;</span>
+<span style="color: #999988; font-style: italic">  {#foreach $T as entry}</span>
+<span style="color: #999988; font-style: italic">    &lt;li&gt;{$T.entry.Qty} {$T.entry.Name}&lt;/li&gt;</span>
+<span style="color: #999988; font-style: italic">    {#if $T.entry.Elements}{#include entry root=$T.entry.Elements}{#/if}</span>
+<span style="color: #999988; font-style: italic">  {#/for}</span>
+<span style="color: #999988; font-style: italic">  &lt;/ul&gt;</span>
+<span style="color: #999988; font-style: italic">{#/template entry}</span>
+<span style="color: #999988; font-style: italic">  --&gt;</span><span style="color: #000080">&lt;/textarea&gt;&lt;/p&gt;</span>
+  
+  <span style="color: #999988; font-style: italic">&lt;!-- Output elements --&gt;</span>
+  <span style="color: #000080">&lt;div</span> <span style="color: #008080">id=</span><span style="color: #bb8844">&quot;ItemBOM&quot;</span> <span style="color: #008080">class=</span><span style="color: #bb8844">&quot;Content&quot;</span><span style="color: #000080">&gt;&lt;/div&gt;</span>
+  
+<span style="color: #000080">&lt;/body&gt;</span>
+<span style="color: #000080">&lt;/html&gt;</span>
+</pre></td></tr></table></div>

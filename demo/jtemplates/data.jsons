@@ -1,0 +1,146 @@
+<div style="background: #ffffff; overflow:auto;width:auto;color:black;background:white;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73</pre></td><td><pre style="margin: 0; line-height: 125%">{
+  <span style="color: #000080">&quot;Customers&quot;</span>: [
+    {
+      <span style="color: #000080">&quot;ID&quot;</span>: <span style="color: #bb8844">&quot;C01&quot;</span>,
+      <span style="color: #000080">&quot;FirstName&quot;</span>: <span style="color: #bb8844">&quot;John&quot;</span>,
+      <span style="color: #000080">&quot;LastName&quot;</span>: <span style="color: #bb8844">&quot;Smith&quot;</span>,
+      <span style="color: #000080">&quot;Born&quot;</span>: <span style="color: #009999">1975</span>,
+      <span style="color: #000080">&quot;Email&quot;</span>: <span style="color: #bb8844">&quot;john.smith@company.com&quot;</span>
+    },
+    {
+      <span style="color: #000080">&quot;ID&quot;</span>: <span style="color: #bb8844">&quot;C02&quot;</span>,
+      <span style="color: #000080">&quot;FirstName&quot;</span>: <span style="color: #bb8844">&quot;Emily&quot;</span>,
+      <span style="color: #000080">&quot;LastName&quot;</span>: <span style="color: #bb8844">&quot;Smart&quot;</span>,
+      <span style="color: #000080">&quot;Born&quot;</span>: <span style="color: #009999">1983</span>,
+      <span style="color: #000080">&quot;Email&quot;</span>: <span style="color: #bb8844">&quot;emily.smart@company.com&quot;</span>
+    }
+  ],
+  
+  <span style="color: #000080">&quot;Items&quot;</span>: [
+    {
+      <span style="color: #000080">&quot;ID&quot;</span>: <span style="color: #bb8844">&quot;I01&quot;</span>,
+      <span style="color: #000080">&quot;Name&quot;</span>: <span style="color: #bb8844">&quot;Bike&quot;</span>,
+      <span style="color: #000080">&quot;SalesPrice&quot;</span>: <span style="color: #009999">500</span><span style="color: #a61717; background-color: #e3d2d2">.</span><span style="color: #009999">00</span>,
+      
+      <span style="color: #000080">&quot;BOM&quot;</span>: {
+        <span style="color: #000080">&quot;Name&quot;</span>: <span style="color: #bb8844">&quot;Bike 1&quot;</span>,
+        <span style="color: #000080">&quot;Elements&quot;</span>: [
+          {<span style="color: #000080">&quot;Name&quot;</span>: <span style="color: #bb8844">&quot;wheel&quot;</span>, <span style="color: #000080">&quot;Qty&quot;</span>: <span style="color: #009999">2</span>},
+          {<span style="color: #000080">&quot;Name&quot;</span>: <span style="color: #bb8844">&quot;frame&quot;</span>, <span style="color: #000080">&quot;Qty&quot;</span>: <span style="color: #009999">1</span>,
+            <span style="color: #000080">&quot;Elements&quot;</span>: [
+              {<span style="color: #000080">&quot;Name&quot;</span>: <span style="color: #bb8844">&quot;steering wheel&quot;</span>, <span style="color: #000080">&quot;Qty&quot;</span>: <span style="color: #009999">1</span>,
+                <span style="color: #000080">&quot;Elements&quot;</span>: [
+                  {<span style="color: #000080">&quot;Name&quot;</span>: <span style="color: #bb8844">&quot;bell&quot;</span>, <span style="color: #000080">&quot;Qty&quot;</span>: <span style="color: #009999">1</span>},
+                  {<span style="color: #000080">&quot;Name&quot;</span>: <span style="color: #bb8844">&quot;handle&quot;</span>, <span style="color: #000080">&quot;Qty&quot;</span>: <span style="color: #009999">2</span>}
+                ]},
+              {<span style="color: #000080">&quot;Name&quot;</span>: <span style="color: #bb8844">&quot;saddle&quot;</span>, <span style="color: #000080">&quot;Qty&quot;</span>: <span style="color: #009999">1</span>}
+            ]},
+          {<span style="color: #000080">&quot;Name&quot;</span>: <span style="color: #bb8844">&quot;transmission mechanism&quot;</span>, <span style="color: #000080">&quot;Qty&quot;</span>: <span style="color: #009999">1</span>,
+            <span style="color: #000080">&quot;Elements&quot;</span>: [
+              {<span style="color: #000080">&quot;Name&quot;</span>: <span style="color: #bb8844">&quot;chain&quot;</span>, <span style="color: #000080">&quot;Qty&quot;</span>: <span style="color: #009999">1</span>},
+              {<span style="color: #000080">&quot;Name&quot;</span>: <span style="color: #bb8844">&quot;pedal&quot;</span>, <span style="color: #000080">&quot;Qty&quot;</span>: <span style="color: #009999">2</span>}
+            ]}
+        ]
+      }
+    },
+    {
+      <span style="color: #000080">&quot;ID&quot;</span>: <span style="color: #bb8844">&quot;I02&quot;</span>,
+      <span style="color: #000080">&quot;Name&quot;</span>: <span style="color: #bb8844">&quot;Car&quot;</span>,
+      <span style="color: #000080">&quot;SalesPrice&quot;</span>: <span style="color: #009999">35000</span><span style="color: #a61717; background-color: #e3d2d2">.</span><span style="color: #009999">00</span>
+    }
+  ],
+  
+  <span style="color: #000080">&quot;SalesEntry&quot;</span>: [
+    {
+      <span style="color: #000080">&quot;CustomerID&quot;</span>: <span style="color: #bb8844">&quot;C01&quot;</span>,
+      <span style="color: #000080">&quot;ItemID&quot;</span>: <span style="color: #bb8844">&quot;I01&quot;</span>,
+      <span style="color: #000080">&quot;SalesPrice&quot;</span>: <span style="color: #009999">495</span><span style="color: #a61717; background-color: #e3d2d2">.</span><span style="color: #009999">00</span>,
+      <span style="color: #000080">&quot;UnitCost&quot;</span>: <span style="color: #009999">320</span><span style="color: #a61717; background-color: #e3d2d2">.</span><span style="color: #009999">00</span>
+    },
+    {
+      <span style="color: #000080">&quot;CustomerID&quot;</span>: <span style="color: #bb8844">&quot;C01&quot;</span>,
+      <span style="color: #000080">&quot;ItemID&quot;</span>: <span style="color: #bb8844">&quot;I02&quot;</span>,
+      <span style="color: #000080">&quot;SalesPrice&quot;</span>: <span style="color: #009999">33999</span><span style="color: #a61717; background-color: #e3d2d2">.</span><span style="color: #009999">00</span>,
+      <span style="color: #000080">&quot;UnitCost&quot;</span>: <span style="color: #009999">29000</span><span style="color: #a61717; background-color: #e3d2d2">.</span><span style="color: #009999">00</span>
+    },
+    {
+      <span style="color: #000080">&quot;CustomerID&quot;</span>: <span style="color: #bb8844">&quot;C02&quot;</span>,
+      <span style="color: #000080">&quot;ItemID&quot;</span>: <span style="color: #bb8844">&quot;I01&quot;</span>,
+      <span style="color: #000080">&quot;SalesPrice&quot;</span>: <span style="color: #009999">500</span><span style="color: #a61717; background-color: #e3d2d2">.</span><span style="color: #009999">00</span>,
+      <span style="color: #000080">&quot;UnitCost&quot;</span>: <span style="color: #009999">320</span><span style="color: #a61717; background-color: #e3d2d2">.</span><span style="color: #009999">00</span>
+    }
+  ]
+}
+</pre></td></tr></table></div>
